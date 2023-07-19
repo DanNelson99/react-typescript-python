@@ -1,10 +1,15 @@
+import Header from "../header/Header";
+
 import "./Root.css"
 
 const Root = () => {
     return (
-        <div>
-            nav stuff
-        </div>
+        <>
+            <Header />
+            <div>
+                nav stuff
+            </div>
+        </>
     )
 };
 
