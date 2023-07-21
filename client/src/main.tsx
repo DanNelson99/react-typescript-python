@@ -4,7 +4,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 //Custom
-import App from './App.tsx'
+import App from "./App.tsx"
 
 import './index.css'
 

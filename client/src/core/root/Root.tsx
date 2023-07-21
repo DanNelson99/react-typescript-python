@@ -1,14 +1,15 @@
-import Header from "../header/Header";
+import { Outlet } from "react-router-dom";
 
-import "./Root.css"
+import Header from "../header/Header";
+import AppFrame from "../../common/frames/AppFrame";
 
 const Root = () => {
     return (
         <>
             <Header />
-            <div>
-                nav stuff
-            </div>
+            <AppFrame>
+                <Outlet />
+            </AppFrame >
         </>
     )
 };

@@ -1,7 +1,5 @@
 import { ReactNode } from "react";
 
-import "./NavBar.css";
-
 interface NavBarProps {
     children: ReactNode;
 }
