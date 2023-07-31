@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 interface AppFrameProps {
     children: ReactNode;
@@ -14,7 +14,7 @@ const AppFrame = ({ children, maxScreenWidth }: AppFrameProps) => {
 };
 
 AppFrame.defaultProps = {
-    maxScreenWidth: "mx-auto max-w-screen-xl",
+    maxScreenWidth: 'mx-auto max-w-screen-xl',
 };
 
 export default AppFrame;

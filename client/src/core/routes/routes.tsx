@@ -3,37 +3,43 @@
  */
 import {
   createBrowserRouter,
-} from "react-router-dom";
+} from 'react-router-dom';
 
-import Root from "../root/Root";
-import Settings from "../../settings/Settings";
-import About from "../../about/About";
-import Home from "../../home/Home";
-import NotFound from "../notFound/NotFound";
+import Root from '../root/Root';
+import Settings from '../../settings/Settings';
+import About from '../../about/About';
+import Home from '../../home/Home';
+import NotFound from '../notFound/NotFound';
+
+import { routes } from '../types/globalTypes';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: routes.BASE,
     element: <Root />,
     children: [
       {
-        path: "/",
+        path: routes.HOME,
         element: <Home />,
       },
       {
-        path: "/about",
+        path: routes.ABOUT,
         element: <About />,
       },
       {
-        path: "/settings",
+        path: routes.SETTINGS,
         element: <Settings />,
       },
       {
-        path: "*",
+        path: '*',
         element: <NotFound />,
       }
     ],
   },
+  {
+    path: '*',
+    element: <NotFound />,
+  }
 ]);
 
 export default router;
