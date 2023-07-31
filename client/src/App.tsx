@@ -1,10 +1,10 @@
 import {
   RouterProvider,
-} from "react-router-dom";
+} from 'react-router-dom';
 
 //Custom
-import { GlobalStateProvider } from "./core/globalState/globalState.tsx";
-import router from "./core/routes/routes";
+import { GlobalStateProvider } from './core/globalState/globalState.tsx';
+import router from './core/routes/routes';
 
 const App = () => {
   return (

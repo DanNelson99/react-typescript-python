@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 interface NavBarProps {
     children: ReactNode;
@@ -7,7 +7,7 @@ interface NavBarProps {
 const NavBar = ({ children }: NavBarProps) => {
 
     return (
-        <div className="bg-sky-400 h-16">
+        <div className='bg-primary flex flex-row items-center justify-between'>
             {children}
         </div>
     );
