@@ -1,5 +1,5 @@
 // This manages global state as one should be split to be more readable
-import { GlobalAction, GlobalState, GlobalActionType } from './types';
+import { GlobalAction, GlobalState, GlobalActionType } from "./types";
 
 export const reducer = (state: GlobalState, action: GlobalAction) => {
     switch (action.type) {
