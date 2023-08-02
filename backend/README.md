@@ -15,7 +15,7 @@ Set the `FLASK_APP` environment variable to main
 
 `export FLASK_ENV=development`
 
-`flask run -h localhost -p 3000`
+`flask run -h localhost -p 4000`
 
 # App runs on
-http://localhost:3000/
+http://localhost:4000/

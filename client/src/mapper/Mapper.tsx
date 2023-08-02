@@ -1,4 +1,4 @@
-const Settings = () => {
+const Mapper = () => {
 
     return (
         <div className="prose">
@@ -7,4 +7,4 @@ const Settings = () => {
     )
 };
 
-export default Settings
+export default Mapper;

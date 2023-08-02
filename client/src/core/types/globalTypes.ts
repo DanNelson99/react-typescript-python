@@ -1,6 +1,7 @@
 export enum routes {
-    BASE = '/',
-    HOME =  '/',
-    ABOUT = '/about',
-    SETTINGS = '/settings'
+    BASE = "/",
+    HOME =  "/",
+    MAPPER = "/mapper",
+    ABOUT = "/about",
+    SETTINGS = "/settings"
 }

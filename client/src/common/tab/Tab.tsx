@@ -1,4 +1,4 @@
-import { ElementType, Dispatch, SetStateAction } from 'react';
+import { ElementType, Dispatch, SetStateAction } from "react";
 
 
 interface TabProps {
@@ -12,7 +12,7 @@ interface TabProps {
 
 const Tab = ({ label, StartIcon, EndIcon, selectedRoute, route, setSelectedRoute }: TabProps) => {
     console.log(route, selectedRoute);
-    const selected = selectedRoute === route ? 'border-black border-b-2 border-solid' : '';
+    const selected = selectedRoute === route ? "border-black border-b-2 border-solid" : "";
    
 
     const ChangeRoute = () => {
@@ -22,17 +22,17 @@ const Tab = ({ label, StartIcon, EndIcon, selectedRoute, route, setSelectedRoute
     return (
         <div onClick={ChangeRoute} className={`flex flex-row content-center cursor-pointer w-min px-6 py-4 ${selected}`}>
             {StartIcon &&
-                <StartIcon className='w-4' />
+                <StartIcon className="w-4" />
             }
 
             {label &&
-                <div className='prose mx-2'>
+                <div className="prose mx-2">
                     {label}
                 </div>
             }
 
             {EndIcon &&
-                <EndIcon className='w-4' />
+                <EndIcon className="w-4" />
             }
         </div>
     );

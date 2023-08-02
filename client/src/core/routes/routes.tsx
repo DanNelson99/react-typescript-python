@@ -1,44 +1,82 @@
 /**
  * Following a remix pattern so I can make this more enterprise like
  */
+import { Suspense } from "react";
 import {
   createBrowserRouter,
-} from 'react-router-dom';
+} from "react-router-dom";
 
-import Root from '../root/Root';
-import Settings from '../../settings/Settings';
-import About from '../../about/About';
-import Home from '../../home/Home';
-import NotFound from '../notFound/NotFound';
+import Root from "../root/Root";
+import Settings from "../../settings/Settings";
+import About from "../../about/About";
+import Home from "../../home/Home";
+import Mapper from "../../mapper/Mapper";
 
-import { routes } from '../types/globalTypes';
+import Error from "../error/Error";
+import Fallback from "./fallback/FallBack";
+import NotFound from "../notFound/NotFound";
+
+import GET from "./api/get";
+
+import { routes } from "../types/globalTypes";
 
 const router = createBrowserRouter([
   {
     path: routes.BASE,
     element: <Root />,
+    errorElement: <Error />,
     children: [
       {
         path: routes.HOME,
-        element: <Home />,
+        errorElement: <Error />,
+        element: (
+          <Suspense fallback={<Fallback />}>
+            <Home />
+          </Suspense>
+        ),
+        loader: async () => GET({ requestUrl: "/" })
+      },
+      {
+        path: routes.MAPPER,
+        element: (
+          <Suspense fallback={<Fallback />}>
+            <Mapper />
+          </Suspense>
+        )
       },
       {
         path: routes.ABOUT,
-        element: <About />,
+        element: (
+          <Suspense fallback={<Fallback />}>
+            <About />
+          </Suspense>
+        )
       },
       {
         path: routes.SETTINGS,
-        element: <Settings />,
+        element: (
+          <Suspense fallback={<Fallback />}>
+            <Settings />
+          </Suspense>
+        )
       },
       {
-        path: '*',
-        element: <NotFound />,
+        path: "*",
+        element: (
+          <Suspense fallback={<Fallback />}>
+            <NotFound />
+          </Suspense>
+        )
       }
     ],
   },
   {
-    path: '*',
-    element: <NotFound />,
+    path: "*",
+    element: (
+      <Suspense fallback={<Fallback />}>
+        <NotFound />
+      </Suspense>
+    )
   }
 ]);
 
