@@ -7,6 +7,11 @@ This is a constant work in progress
 
 Currently the frontend is my focus the api and backend is started but not completely functional
 
+
+# Backend - create db and start up 
+
+`python3 ./database/init_db.py`
+
 # Frontend - client start up instructions
 
 Open command line and cd in client directory

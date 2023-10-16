@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS posts;
+DROP TABLE IF EXISTS workspaces;
+
+CREATE TABLE workspaces (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    created_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    title TEXT NOT NULL,
+    description TEXT DEFAULT ""
+);
+
+

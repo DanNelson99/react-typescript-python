@@ -1,22 +1,23 @@
-import { ElementType, Dispatch, SetStateAction } from "react";
-
+import { ElementType } from "react";
+import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 interface TabProps {
     label: string
     StartIcon?: ElementType
     EndIcon?: ElementType
-    selectedRoute?: string
     route: string
-    setSelectedRoute: Dispatch<SetStateAction<string>>
 }
 
-const Tab = ({ label, StartIcon, EndIcon, selectedRoute, route, setSelectedRoute }: TabProps) => {
-    console.log(route, selectedRoute);
-    const selected = selectedRoute === route ? "border-black border-b-2 border-solid" : "";
-   
+const Tab = ({ label, StartIcon, EndIcon, route }: TabProps) => {
+
+    const { pathname } = useLocation();
+    const navigate = useNavigate();
+    const selected = pathname === route ? "border-black border-b-2 border-solid" : "";
+
 
     const ChangeRoute = () => {
-        setSelectedRoute(route);
+        navigate(route);
     };
 
     return (

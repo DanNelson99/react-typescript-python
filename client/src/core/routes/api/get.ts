@@ -1,16 +1,8 @@
-interface GETProps {
-    requestUrl: string
-}
+import { GETProps} from './types';
 
-// declare const process : {
-//     env: {
-//         REACT_APP_API_HOST: string
-//     }
-// }
+const GET = ({ requestUrl }: GETProps) => {
 
-const GET = ({requestUrl}: GETProps) => {
-
-    const API_HOST  = "http://localhost:4000";
+    const API_HOST = import.meta.env.VITE_APP_API_HOST ?? "http://localhost:4000";
 
     const url = new URL(`${API_HOST}${requestUrl}`);
 
