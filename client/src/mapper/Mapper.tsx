@@ -1,9 +1,13 @@
+import ReactFlow, { Controls, Panel } from 'reactflow';
+
 const Mapper = () => {
 
     return (
-        <div className="prose">
-            Under construction
-        </div>
+        <ReactFlow>
+            <Controls showInteractive={false} />
+            <Panel position="top-left">React Flow Mind Map</Panel>
+            <Panel position="top-right">React Flow Mind Map</Panel>
+        </ReactFlow>
     )
 };
 
